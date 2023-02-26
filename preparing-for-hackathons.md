@@ -1,7 +1,14 @@
 # Preparing for Hackathons
 
-1. Research Projects
-2. Choose a Role
-3. Ready GitHub or GitLab Account
-4. Ready Gmail Account
-5. Ready Slack Account
+## Research Projects
+
+## Choose a Role
+
+## Ready GitHub or GitLab Account
+  - Keep Personal and Professional Accounts Separate
+  - Configure SSH
+    - if using multiple git logins, configure ssh hosts
+
+## Ready Gmail Account
+
+## Ready Slack Account
