@@ -10,3 +10,7 @@ Most modern OS's now handle SSH pretty similarly, but these instructions are for
   - ```ls -a ~/.ssh```
   - If you receive the message "No such file or directory", then you have no ssh keys. If a list of files is returned, you likely already have keys generated.
   - If keys already exist you can use them (assuming the private key portion hasn't been exposed).
+
+### Creating a new SSH key
+- ssh-keygen will create a 3072-bit RSA key pair by default; you will load the public portion into your Source Control settings and use the private key during pushes
+- run ```ssh-keygen```
