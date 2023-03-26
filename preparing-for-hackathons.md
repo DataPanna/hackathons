@@ -14,10 +14,24 @@ In the world of hackathons, there are a few common platforms used as a primary m
 Like Gmail, Slack is a fairly universally accepted tool at hackathons. Slack is a chat application that allows hackathon organizers a place for all participants to digitally communicate. Typically, the hackathon will have a Slack Workspace with channels for the primary projects explored during the event. Look on the hackathon website for any information as conversations sometimes start days before the event in Slack. It's very simple to sign up, and including your photo to your profile will help your team members know you better.
 
 ## Ready GitHub Account
-  - Keep Personal and Professional Accounts Separate
-  - Configure SSH
-    - if using multiple git logins, configure ssh hosts
-  - Configure GPG
+Another important tool leveraged for hackathons is GitHub, a social code platform used to organize programming projects and coordinate contributions from distributed teams. Whether you are planning on committing code, documentation, or ideas as a result of your efforts, GitHub is likely the final place your work will live. Even if your results ultimatley show on a website, the code and content behind that website will almost certainly be stored on GitHub. There are definitely interesting exceptions, but the accessibility of the GitHub platform makes it a common choice amongst hackathon organizers. Here are some key notes about leveraging GitHub:
+  - Keep Personal and Professional Accounts Separate (if you already have a work account)
+  - setup global git name and email on your computer (if git isn't installed, go to [the git homepage](https://git-scm.com/) to determine how to install on your computer)
+    - ```git --global --list```
+    - if you don't see entries for user.name and user.email, use ```git user.name "Your Name"``` and ```git user.email "your.email@email.com"``` to set them
+  - [Configure SSH](https://github.com/DataPanna/hackathons/blob/main/configure-ssh.md)
+    - SSH is used to authenticate with the GitHub service; this step (or using a login) lets GitHub know you are allowed to submit your contribution and that no one is impersonating you
+    - you don't need SSH to use GitHub (you can just use your GitHub login), but it's a great way to learn more about computer science!
+    - if using multiple git logins, configure ssh hosts (advanced scenario)
+  - Configure GPG (advanced scenario)
+    - similarly to SSH, GPG is another security-forward mechanism for proving to others your contributions are your own
+    - instead of focusing on authentication at the time of the commit, GPG leaves a permanent signature on each of your commits that lets others know it's cryptographically verified
+    - while this step is not required for most participants, if you will be contributing code to a product that will go into production, consider this necessary
+    - check for existing gpg keys using ```gpg --list-secret-keys --keyid-format=long```
+    - or generate new ones using ```gpg --full-generate-key``` (be sure to select 4096 bits for use on GitHub)
+    - use ```gpg --list-secret-keys --keyid-format=long``` to ensure the key is generated and to get the ID for the next step
+    - using the {ID} from the previous command, run ```gpg --armor --exort {ID}``` to print out the public key that you need to load into your GitHub > Settings > SSH and GPG configuration.
   - Setup repos based on expected role
+    - If you are able to find data or topics you can perform some work on ahead of time, create a repo in your new GitHub account. It will help you get familiar with what to expect at the event
     - default branch should be called main or similar
     - enable branch protection that requires pull requests
